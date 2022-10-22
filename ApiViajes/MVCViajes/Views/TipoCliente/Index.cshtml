@@ -1,0 +1,59 @@
+﻿@model IEnumerable<ApiViajes.Models.TipoCliente>
+@{
+    ViewBag.Title = "TipoClientes";
+}
+
+<div class="container">
+
+    <div class="col-sm-12 my-5 text-center">
+        <h2 class="font-weight-bold">
+            TipoClientes
+        </h2>
+    </div>
+
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                id
+            </th>
+            <th>
+                Mombre TipoCliente
+            </th>
+            <th>
+                Cantidad de paquetes
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id_TipoCliente)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NombreTipoCliente)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CantidadMaxPaquetes)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id_TipoCliente }) |
+                @Html.ActionLink("Details", "Details", new { id = item.Id_TipoCliente }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id_TipoCliente })
+            </td>
+
+        </tr>
+        }
+        <tr>
+            <td>
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            </td>
+        </tr>
+
+    </table>
+
+</div>

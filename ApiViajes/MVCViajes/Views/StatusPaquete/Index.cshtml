@@ -1,0 +1,39 @@
+﻿@model IEnumerable<ApiViajes.Models.StatusPaquete>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Id_StatusPaquete)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NombreStatusPaquete)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Id_StatusPaquete)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NombreStatusPaquete)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.Id_StatusPaquete }) |
+            @Html.ActionLink("Details", "Details", new { id = item.Id_StatusPaquete }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.Id_StatusPaquete })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,83 @@
+﻿@model IEnumerable<ApiViajes.Models.Tarifa>
+@{
+    ViewBag.Title = "Tarifas";
+}
+
+<div class="container">
+
+    <div class="col-sm-12 my-5 text-center">
+        <h2 class="font-weight-bold">
+            Tarifas
+        </h2>
+    </div>
+
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                id
+            </th>
+            <th>
+                id Tipo Cliente
+            </th>
+            <th>
+                id Transporte
+            </th>
+            <th>
+                Mombre Tarifa
+            </th>
+            <th>
+                Costo Ciudad
+            </th>
+            <th>
+                Costo Municipio
+            </th>
+            <th>
+                Costo Interior del País
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id_Tarifa)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id_TipoCliente)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id_Transporte)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NombreTarifa)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.costoCiudad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.costoMunicipio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.costoInteriorPais)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id_Tarifa }) |
+                @Html.ActionLink("Details", "Details", new { id = item.Id_Tarifa }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id_Tarifa })
+            </td>
+
+        </tr>
+        }
+        <tr>
+            <td>
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            </td>
+        </tr>
+
+    </table>
+
+</div>

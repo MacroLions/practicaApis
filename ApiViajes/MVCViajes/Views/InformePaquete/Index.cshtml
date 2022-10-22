@@ -1,0 +1,81 @@
+﻿@model IEnumerable<ApiViajes.Models.InformePaquete>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Id_InformePaquete)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CodigoPaquete)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Id_Cliente)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Id_Transporte)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FechaEnvio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FechaRecibo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Id_SucursalOrigen)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Id_SucursalDestino)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Id_StatusPaquete)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Id_InformePaquete)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CodigoPaquete)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Id_Cliente)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Id_Transporte)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FechaEnvio)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FechaRecibo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Id_SucursalOrigen)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Id_SucursalDestino)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Id_StatusPaquete)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.Id_InformePaquete}) |
+            @Html.ActionLink("Details", "Details", new { id = item.Id_InformePaquete }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.Id_InformePaquete })
+        </td>
+    </tr>
+}
+
+</table>
